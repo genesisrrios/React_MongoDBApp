@@ -1,2 +1,2 @@
-# React_MongoDBApp
+# React Mongo DB App
 Im learning react and using Node Js with MongoDB to follow a LinkedIn Course name: Learning Full-Stack JavaScript Development: MongoDB, Node, and Reac
