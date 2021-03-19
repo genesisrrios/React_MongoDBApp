@@ -14,12 +14,14 @@ class App extends React.Component {
 		return (
 			<div>
 				<Header className="Header" message={this.state.pageHeader}/>
-				<div>
-				{
-					this.props.contests.map(
-						contest => <ContestPreview {...contest}/>
-					)
-				}
+				<div className="row">
+					<div className="col-md-12">
+					{
+						this.props.contests.map(
+							contest => <ContestPreview {...contest}/>
+						)
+					}
+					</div>
 				</div>
 			</div>
 		);
