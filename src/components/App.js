@@ -1,12 +1,21 @@
 import React from 'react'
 import Header from './Header';
 import ContestPreview from './ContestPreview';
+import axios from 'axios';
 
 class App extends React.Component {
 	state = {
-		pageHeader: 'Naming Contests'
+		pageHeader: 'Naming Contests',
+		contests: []
 	};
 	componentDidMount () {
+		axios.get('/api/contests')
+			.then(resp => {
+				this.setState({
+					contests: resp.data.contests
+				})
+			})
+			.catch(console.error)
 	};
 	componentWillUnmount () {
 	};
@@ -17,8 +26,8 @@ class App extends React.Component {
 				<div className="row">
 					<div className="col-md-12">
 					{
-						this.props.contests.map(
-							contest => <ContestPreview {...contest}/>
+						this.state.contests.map(
+							contest => <ContestPreview key={contest.id} {...contest}/>
 						)
 					}
 					</div>
