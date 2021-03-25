@@ -1,21 +1,11 @@
 import React from 'react'
 import Header from './Header';
 import ContestPreview from './ContestPreview';
-import axios from 'axios';
 
 class App extends React.Component {
 	state = {
 		pageHeader: 'Naming Contests',
-		contests: []
-	};
-	componentDidMount () {
-		axios.get('/api/contests')
-			.then(resp => {
-				this.setState({
-					contests: resp.data.contests
-				})
-			})
-			.catch(console.error)
+		contests: this.props.initialContests
 	};
 	componentWillUnmount () {
 	};

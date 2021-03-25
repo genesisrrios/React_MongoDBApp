@@ -1,10 +1,10 @@
 import React from 'react';
 
 const ContestPreview = (contest) =>  (
-	<div class="card" style={{width: '18rem'}}>
-		<div class="card-body">
-			<h5 class="card-title">{contest.categoryName}</h5>
-			<p class="card-text">{contest.contestName}</p>
+	<div className="card" style={{width: '18rem'}}>
+		<div className="card-body">
+			<h5 className="card-title">{contest.categoryName}</h5>
+			<p className="card-text">{contest.contestName}</p>
 		</div>
 	</div>
 );
